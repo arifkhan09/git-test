@@ -1,41 +1,35 @@
 pipeline {
     agent any
+
     stages {
-        stage('One') {
-                steps {
-                        echo 'Hi, this is Arif'
-			
-                }
+
+        stage('Checkout') {
+            steps {
+                echo "Code Checkout fro git..."
+                git 
+            }
         }
-	    stage('Two'){
-		    
-		steps {
-			input('Do you want to proceed?')
+	    
+	stage('Compile') {
+            steps {
+                echo "Compiling..."
+                sh "/usr/local/bin/sbt compile"
+            }
         }
-	    }
-        stage('Three') {
-                when {
-                        not {
-                                branch "master"
-                        }
-                }
-                steps {
-			echo "Hello"
-                        }
+
+        stage('Test') {
+            steps {
+                echo "Testing..."
+                sh "/usr/local/bin/sbt test"
+            }
         }
-        stage('Four') {
-                parallel {
-                        stage('Unit Test') {
-                                steps{
-                                        echo "Running the unit test..."
-                                }
-                        }
-                        stage('Integration test') {
-                                steps {
-					echo 'Running the integration test..'
-				}
-                               
-			}  }
+
+        stage('Package') {
+            steps {
+                echo "Packaging..."
+                sh "/usr/local/bin/sbt package"
+            }
         }
+
     }
 }
