@@ -1,14 +1,16 @@
 pipeline {
     agent any
+
     stages {
+
         stage('Checkout') {
             steps {
                 echo "Code Checkout fro git..."
                 git "https://github.com/arifkhan09/sparkapplication.git"
             }
         }
-	    
-	stage('Compile') {
+        
+        stage('Compile') {
             steps {
                 echo "Compiling..."
                 sh "/usr/local/bin/sbt compile"
