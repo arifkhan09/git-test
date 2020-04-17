@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('One') {
                 steps {
-                        echo 'Hi, this is Arif'
+                        echo 'Hi, this is Zulaikha from edureka'
 			
                 }
         }
@@ -31,7 +31,7 @@ pipeline {
                                 }
                         }
                         stage('Integration test') {
-                               steps {
+                                steps {
 					echo 'Running the integration test..'
 				}
                                
