@@ -31,12 +31,7 @@ pipeline {
                                 }
                         }
                         stage('Integration test') {
-                               steps{
-                                        echo "Running the unit test..."
-                                    }
-                      }
-			}
-				steps {
+                               steps {
 					echo 'Running the integration test..'
 				}
                                
