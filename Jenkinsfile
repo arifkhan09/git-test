@@ -6,7 +6,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo "Code Checkout fro git..."
-                git 
+                git "https://github.com/arifkhan09/sparkapplication.git"
             }
         }
 	    
