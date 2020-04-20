@@ -4,7 +4,7 @@ pipeline {
         stage('Checkout') {
                        steps {
                                echo "Code Checkout from git..."
-                               git "https://github.com/arifkhan09/sparkapplication.git"
+                               git branch: 'master', url: "https://github.com/arifkhan09/sparkapplication.git"
                         }
         }
         
