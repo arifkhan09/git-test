@@ -1,10 +1,13 @@
 pipeline {
     agent any
+    parameters {
+        sring(defaultValue: 'master', description: '', name: 'Branch')
+    }
     stages {
         stage('Checkout') {
                        steps {
                                echo "Code Checkout from git..."
-                               git branch: 'master', url: "https://github.com/arifkhan09/sparkapplication.git"
+                               git branch: ${params.Branch}, url: "https://github.com/arifkhan09/sparkapplication.git"
                         }
         }
         
