@@ -40,7 +40,7 @@ pipeline {
                      def uploadSpec = """{
                                 "files": [
                                 { 
-                                     "pattern": "**/target/scala-2.11/*.jar",
+                                     "pattern": "/var/lib/jenkins/workspace/pipeline-demo/target/scala-2.11/*.jar",
                                      "target": "sbt-dev-local/ccdemo_2.11-1.0.jar"
                                   }
                                 ]
