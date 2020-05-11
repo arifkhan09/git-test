@@ -7,7 +7,7 @@ pipeline {
         stage('Checkout') {
                        steps {
                                echo "Code Checkout from git..."
-                               git branch: ${params.Branch}, url: "https://github.com/dgadiraju/ccdemo.git"
+                               git branch: "${params.Branch}", url: "https://github.com/dgadiraju/ccdemo.git"
                         }
         }
         
