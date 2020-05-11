@@ -49,5 +49,17 @@ pipeline {
                 }
             }
          }
+        
+        stage('Deploy') {
+                       steps {
+                               echo 'Deploying..'
+                               ansiblePlaybook( 
+                                               playbook: "$HOME/ansible_playbook/sparkappjarcopy.yml"
+                                              // inventory: "${env.PLAYBOOK_ROOT}/${env.INVENTORY}",   
+                                               //credentialsId: '<your-credentials-id>', 
+                                               //extras: '-e "i=' + "${ env.ISSUER }" + ' b='my_bank"+ '" -v') 
+                                         )
+            }
+        }
     }    
 }
