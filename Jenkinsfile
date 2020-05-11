@@ -1,7 +1,7 @@
 pipeline {
     agent any
     parameters {
-        sring(defaultValue: 'master', description: '', name: 'Branch')
+        string(defaultValue: 'master', description: '', name: 'Branch')
     }
     stages {
         stage('Checkout') {
