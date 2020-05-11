@@ -35,7 +35,7 @@ pipeline {
         stage('Publish') {
             steps {
                 echo 'Publishing..'
-                script{
+                script {
                      def server = Artifactory.server 'jenkins-artifactory-server'
                      def uploadSpec = """{
                                 "files": [
