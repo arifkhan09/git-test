@@ -33,7 +33,7 @@ pipeline {
         }
         
         stage('Publish') {
-            step {
+            steps {
                 echo 'Publishing..'
                 script{
                     def server = Artifactory.server 'jenkins-artifactory-server'
