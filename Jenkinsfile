@@ -32,7 +32,7 @@ pipeline {
             }
         }
         
-        /*stage('Publish') {
+        stage('Publish') {
             steps {
                 echo 'Publishing..'
                 script {
@@ -46,9 +46,18 @@ pipeline {
                                 ]
                              }"""
                              server.upload(uploadSpec)
+                     def downloadSpec = """{
+                                 "files": [
+                                   {
+                                         "pattern": "sbt-dev-local/*.jar",
+                                          "target": "/home/codebind/ansible_playbook"
+                                    }
+                                   ]
+                                 }"""
+                                 server.download(downloadSpec)  
                 }
             }
-         }*/
+         }
         
         stage('Deploy') {
                        steps {
