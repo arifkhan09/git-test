@@ -63,8 +63,9 @@ pipeline {
                        steps {
                            echo 'Deploying..'
                            script {
+                               def user = "codebind"
                                ansiblePlaybook( 
-                                               become: true,
+                                               //become: true,
                                                installation: 'ansible',
                                                playbook: "/home/codebind/ansible_playbook/sparkappjarcopy.yml"
                                               // inventory: "${env.PLAYBOOK_ROOT}/${env.INVENTORY}",   
