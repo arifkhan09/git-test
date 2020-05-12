@@ -32,7 +32,7 @@ pipeline {
             }
         }
         
-        stage('Publish') {
+        /*stage('Publish') {
             steps {
                 echo 'Publishing..'
                 script {
@@ -48,7 +48,7 @@ pipeline {
                              server.upload(uploadSpec)
                 }
             }
-         }
+         }*/
         
         stage('Deploy') {
                        steps {
