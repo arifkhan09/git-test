@@ -55,7 +55,8 @@ pipeline {
                            echo 'Deploying..'
                            script {
                                ansiblePlaybook( 
-                                               become: true
+                                               become: true,
+                                               installation: 'ansible',
                                                playbook: "$HOME/ansible_playbook/sparkappjarcopy.yml"
                                               // inventory: "${env.PLAYBOOK_ROOT}/${env.INVENTORY}",   
                                                //credentialsId: '<your-credentials-id>', 
