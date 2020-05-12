@@ -57,7 +57,7 @@ pipeline {
                                ansiblePlaybook( 
                                                become: true,
                                                installation: 'ansible',
-                                               playbook: "$HOME/ansible_playbook/sparkappjarcopy.yml"
+                                               playbook: "/home/codebind/ansible_playbook/sparkappjarcopy.yml"
                                               // inventory: "${env.PLAYBOOK_ROOT}/${env.INVENTORY}",   
                                                //credentialsId: '<your-credentials-id>', 
                                                //extras: '-e "i=' + "${ env.ISSUER }" + ' b='my_bank"+ '" -v') 
