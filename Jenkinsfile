@@ -32,7 +32,7 @@ pipeline {
             }
         }
         
-        stage('Publish') {
+        /*stage('Publish') {
             steps {
                 echo 'Publishing..'
                 script {
@@ -57,7 +57,7 @@ pipeline {
                                  server.download(downloadSpec)  
                 }
             }
-         }
+         }*/
         
         stage('Deploy') {
                        steps {
