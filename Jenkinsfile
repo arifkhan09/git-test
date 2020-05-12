@@ -52,13 +52,16 @@ pipeline {
         
         stage('Deploy') {
                        steps {
-                               echo 'Deploying..'
+                           echo 'Deploying..'
+                           script {
                                ansiblePlaybook( 
+                                               become: true
                                                playbook: "$HOME/ansible_playbook/sparkappjarcopy.yml"
                                               // inventory: "${env.PLAYBOOK_ROOT}/${env.INVENTORY}",   
                                                //credentialsId: '<your-credentials-id>', 
                                                //extras: '-e "i=' + "${ env.ISSUER }" + ' b='my_bank"+ '" -v') 
                                          )
+                           }
             }
         }
     }    
